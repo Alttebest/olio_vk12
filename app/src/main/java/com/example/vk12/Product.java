@@ -1,4 +1,4 @@
-package com.example.vk11;
+package com.example.vk12;
 
 public class Product implements Comparable<Product>{
     String name;
