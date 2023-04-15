@@ -31,6 +31,10 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductViewHolder> 
         holder.txtName.setText(products.get(position).getName());
         holder.imageEdit.setImageResource(android.R.drawable.ic_menu_edit);
         holder.imageRemove.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
+        if (products.get(position).getImportant()){
+            holder.imageImportant.setImageResource(android.R.drawable.btn_star_big_on);
+        }
+
 
         holder.imageRemove.setOnClickListener(view -> {
             Storage.getInstance().getProducts().remove(holder.getAdapterPosition());

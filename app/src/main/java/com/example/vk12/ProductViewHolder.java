@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ProductViewHolder extends RecyclerView.ViewHolder {
 
-    ImageView imageRemove, imageEdit;
+    ImageView imageRemove, imageEdit, imageImportant;
     TextView txtName, editName;
 
 
@@ -20,5 +20,6 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         imageEdit = itemView.findViewById(R.id.imageEdit);
         txtName = itemView.findViewById(R.id.txtName);
         editName = itemView.findViewById(R.id.editTextProduct);
+        imageImportant = itemView.findViewById(R.id.imageImportant);
     }
 }

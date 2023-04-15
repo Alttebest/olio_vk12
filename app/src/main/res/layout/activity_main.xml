@@ -22,16 +22,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="Ostoslista:"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAddProduct" />
+        app:layout_constraintTop_toBottomOf="@+id/cbImportant" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvProducts"
         android:layout_width="350dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="192dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="72dp"
         android:onClick="sortByTime"
         app:layout_constraintStart_toEndOf="@+id/txtProductList"
         app:layout_constraintTop_toBottomOf="@+id/btnAdd"
@@ -64,7 +65,7 @@
         android:id="@+id/txtSortByName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="72dp"
         android:onClick="sortByName"
         android:text="A->Z"
         android:textSize="24sp"
@@ -72,4 +73,14 @@
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toEndOf="@+id/imageSortByTime"
         app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
+
+    <CheckBox
+        android:id="@+id/cbImportant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Tuote on huipputärkeä"
+        app:layout_constraintStart_toStartOf="@+id/editTextAddProduct"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddProduct" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Storage storage;
     TextView NameInput, txtSortByName;
     ImageView imageSortByTime;
+    CheckBox cbImportant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rvProducts);
         txtSortByName = findViewById(R.id.txtSortByName);
         imageSortByTime = findViewById(R.id.imageSortByTime);
+        cbImportant = findViewById(R.id.cbImportant);
 
         NameInput = findViewById(R.id.editTextAddProduct);
 
@@ -40,7 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void addProduct(View view) {
-        storage.getProducts().add(new Product(NameInput.getText().toString()));
+        Boolean important = false;
+        if (cbImportant.isChecked()){
+            important = true;
+        }
+        storage.getProducts().add(new Product(NameInput.getText().toString(), important));
         int position = storage.getProducts().size() - 1;
         recyclerView.getAdapter().notifyItemInserted(position);
         recyclerView.scrollToPosition(position);
